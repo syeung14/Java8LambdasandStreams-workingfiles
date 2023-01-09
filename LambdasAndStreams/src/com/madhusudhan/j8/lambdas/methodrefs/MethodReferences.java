@@ -12,28 +12,31 @@ public class MethodReferences {
 		IMovie m1 = (i) -> i< 100?true:false;
 		IMovie m2 = MethodReferences::isClassic;
 	}
-	
+
 	// Instance method reference usage
 	private void testMovieInstanceMethodRef() {
 		MethodReferences ref = new MethodReferences();
 		IMovie m1 = (i) -> i> 10 && i < 100?true:false;
-		IMovie m2 = ref:: isTop10;
+		IMovie m2 = ref::isTop10;
+		m2.check(999);
 	}
 	private void testMovieArbitaryObjectMethod(){
 		IMovie m1 = SomeMethodReferences::isComedy;
 	}
-	
+
 	public boolean isTop10(int movieId){
+		System.out.println("Movieid " + movieId);
 		return true;
 	}
 	public static boolean isClassic(int movieId){
 		return true;
 	}
-	
+
 	public static void main(String[] args) {
 		MethodReferences client = new MethodReferences();
+		client.testMovieInstanceMethodRef();
 	}
- 
+
 }
 class SomeMethodReferences{
 	public static boolean isComedy(int i){

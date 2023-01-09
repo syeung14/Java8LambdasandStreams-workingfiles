@@ -38,7 +38,7 @@ public class ConsumerFunctionalInterface {
 
 	public static void main(String[] args) {
 		Movie movie = new Movie("Gods Must Be Crazy");
-		new ConsumerFunctionalInterface().testConsumer(movie);
+//		new ConsumerFunctionalInterface().testConsumer(movie);
 		new ConsumerFunctionalInterface().testAndThen(movie);
 	}
 

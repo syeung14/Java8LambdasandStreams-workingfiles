@@ -14,6 +14,11 @@ interface Vehicle extends Engine{
 	}
 }
 class Car implements Engine, Vehicle{
+
+	public String model(int aa) {
+	    String a = Vehicle.super.model(aa);
+		return "";
+	}
 	
 }
 

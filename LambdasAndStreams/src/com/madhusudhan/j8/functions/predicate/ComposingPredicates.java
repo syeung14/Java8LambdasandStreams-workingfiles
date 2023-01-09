@@ -31,7 +31,7 @@ public class ComposingPredicates {
 		
 		Trade t1 = new Trade("GOOG", 200000, "CANCEL");
 		
-		Predicate<Trade> p1 = Predicate.isEqual(t1);
+		Predicate<Trade> p1 = Predicate.isEqual(t1); //returns a Predicate
 		
 		for(Trade t : trades){
 			if(p1.test(t))

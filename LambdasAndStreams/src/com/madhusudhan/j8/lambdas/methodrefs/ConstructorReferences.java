@@ -16,7 +16,8 @@ public class ConstructorReferences {
 	
 	MovieFactory m1 = i -> new Movie(i);
 	MovieFactory m2 = Movie::new;
-	
+
+	//need another Functional interface
 	interface MovieFactory2 {
 		public Movie create(int id, String s);
 	}
