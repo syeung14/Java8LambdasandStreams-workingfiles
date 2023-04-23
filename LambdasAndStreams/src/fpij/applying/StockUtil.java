@@ -8,7 +8,7 @@
 ***/
 package fpij.applying;
 
-import fpij.YahooFinance;
+import fpij.designing.YahooFinance;
 
 import java.math.BigDecimal;
 import java.util.function.Predicate;

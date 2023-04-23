@@ -10,6 +10,12 @@ package fpij.compare;
 
 import java.util.StringJoiner;
 
+class CharObj {
+    String printIt(int ch) {
+        System.out.println((char)ch);
+        return (char)ch + "-";
+    }
+}
 public class IterateString {
 
     private static void printChar(int aChar) {
@@ -18,6 +24,14 @@ public class IterateString {
 
     static void test() {
         final String str = "w00t";
+
+//        str.chars().forEach( c -> System.out.println((char)c));
+//        str.chars().forEach(IterateString::printChar);
+
+        str.chars()
+            .mapToObj(ch -> new CharObj().printIt(ch))
+            .forEach(System.out::println);
+
 
     }
 

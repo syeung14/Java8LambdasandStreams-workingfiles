@@ -8,9 +8,10 @@
 ***/
 package fpij.applying;
 
-import fpij.YahooFinance;
+import fpij.designing.YahooFinance;
 
 import java.math.BigDecimal;
+
 import static java.util.stream.Collectors.joining;
 
 public class Stocks100 {

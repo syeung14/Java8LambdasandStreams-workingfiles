@@ -10,6 +10,7 @@ package fpij.designing;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.function.Predicate;
 
 public class AssetUtil {
   public static int totalAssetValues(final List<Asset> assets) {
@@ -32,14 +33,28 @@ public class AssetUtil {
                  .sum();
   }
 
-  public static void main(final String[] args) {
-    final List<Asset> assets = Arrays.asList(
+  static int common(final List<Asset> assets, final Predicate<Asset> assetSelector) {
+    return assets.stream()
+        .filter(assetSelector)
+        .mapToInt(Asset::getValue)
+        .sum();
+
+  }
+
+  static void testCommon() {
+    System.out.println("total value: " + common(assets, a -> true)); //always true
+    System.out.println("total bonds: " + common(assets, a -> a.getType() == Asset.AssetType.BOND));
+  }
+
+  final static List<Asset> assets = Arrays.asList(
       new Asset(Asset.AssetType.BOND, 1000),
       new Asset(Asset.AssetType.BOND, 2000),
       new Asset(Asset.AssetType.STOCK, 3000),
       new Asset(Asset.AssetType.STOCK, 4000)
-    );
-    
+  );
+
+  public static void main(final String[] args) {
+
     System.out.println("//" + "START:TOTAL_ALL_OUTPUT");
     System.out.println("Total of all assets: " + totalAssetValues(assets));
     System.out.println("//" + "END:TOTAL_ALL_OUTPUT");

@@ -6,7 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
 ***/
-package fpij;
+package fpij.designing;
 
 import java.util.stream.Stream;
 import java.util.function.Function;
@@ -31,10 +31,19 @@ public class Camera {
             .reduce((filter, next) -> filter.compose(next))
             .orElse(color -> color);
   }
+
+  void mySetFilters(final Function<Color, Color>... filters) {
+    filter =
+        Stream.of(filters)
+              .reduce((f, n) -> f.compose(n))
+              .orElseGet(Function::identity);
+  }
+
   public Camera() { setFilters(); }
   
   public static void main(final String[] args) {
     final Camera camera = new Camera();
+
     final Consumer<String> printCaptured = (filterInfo) ->
       System.out.println(String.format("with %s: %s", filterInfo,   
         camera.capture(new Color(200, 100, 200))));

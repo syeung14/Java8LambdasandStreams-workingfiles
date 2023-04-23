@@ -6,7 +6,7 @@
  * We make no guarantees that this code is fit for any purpose. 
  * Visit http://www.pragmaticprogrammer.com/titles/vsjava8 for more book information.
 ***/
-package fpij;
+package fpij.designing;
 
 import java.util.stream.Stream;
 import java.util.function.Function;
@@ -38,7 +38,7 @@ public class Camera2 {
     final Camera2 camera = new Camera2();
     final Consumer<String> printCaptured = (filterInfo) ->
       System.out.println(String.format("with %s: %s", filterInfo,   
-        camera.capture(new Color(200, 100, 200))));
+        camera.capture(new Color(200, 150, 200))));
         
     System.out.println("//" + "START:NOFILTER_OUTPUT");
     printCaptured.accept("no filter");
