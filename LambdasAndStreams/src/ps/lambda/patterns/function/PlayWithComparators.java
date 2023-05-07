@@ -23,6 +23,8 @@ public class PlayWithComparators {
                                                .thenComparing(Person::getAge);
 
         System.out.println(cmpName.reversed());
+
+        Function<Person, String> name = Person::getName;
     }
 
 }

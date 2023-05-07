@@ -1,8 +1,7 @@
-package ps.lambda.patterns;
+package ps.lambda.patterns.ch4;
 
 import ps.lambda.patterns.model.Circle;
 
-import java.awt.*;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
