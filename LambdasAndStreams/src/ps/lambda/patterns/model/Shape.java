@@ -1,4 +1,1 @@
-package ps.lambda.patterns.model;
-
-public abstract class Shape {
-}
+package ps.lambda.patterns.model;public abstract class Shape {}

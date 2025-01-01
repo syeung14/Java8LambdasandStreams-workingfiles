@@ -1,0 +1,1 @@
+package ps.lambda.patterns.factory.registry;import ps.lambda.patterns.factory.factory.Factory;public interface Builder<T> {	void register(String label, Factory<T> factory);}

@@ -1,9 +1,1 @@
-package ps.lambda.patterns.model;
-
-public class Triangle extends Shape {
-
-	@Override
-	public String toString() {
-		return "Triangle []";
-	}
-}
+package ps.lambda.patterns.model;public class Triangle extends Shape {	@Override	public String toString() {		return "Triangle []";	}}

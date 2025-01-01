@@ -1,14 +1,1 @@
-package ps.lambda.patterns.ch2;
-
-import java.util.function.Consumer;
-
-public class PlayConsumers {
-
-    public static void main(String[] args) {
-        Consumer<String> c1 = s -> System.out.println("c1 = " + s);
-        Consumer<String> c2 = s -> System.out.println("c2 = " + s);
-
-        c1.accept("hello");
-    }
-
-}
+package ps.lambda.patterns.ch2;import java.util.Objects;public class PlayConsumers {    public static void main(String[] args) {        Consumer<String> c1 = s -> System.out.println("c1 = " + s);        Consumer<String> c2 = s -> System.out.println("c2 = " + s);        Consumer<String> c3 = c1.andThen(c2);        c3.accept("Hello");    }    @FunctionalInterface    interface Consumer<T> {        void accept(T t);        default Consumer<T> andThen(Consumer<? super T> after) {            Objects.requireNonNull(after);            return (T t) -> {                after.accept(t);                accept(t);            };        }    }}

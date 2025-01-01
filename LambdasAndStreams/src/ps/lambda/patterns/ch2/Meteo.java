@@ -1,0 +1,1 @@
+package ps.lambda.patterns.ch2;public class Meteo {	private int temperature;	public Meteo(int temperature) {		this.temperature = temperature;	}	public int getTemperature() {		return temperature;	}}

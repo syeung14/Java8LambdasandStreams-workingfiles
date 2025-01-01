@@ -1,0 +1,1 @@
+package ps.lambda.patterns.factory.model;public abstract class Shape {}

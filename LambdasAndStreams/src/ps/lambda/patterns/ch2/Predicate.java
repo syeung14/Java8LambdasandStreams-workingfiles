@@ -1,0 +1,1 @@
+package ps.lambda.patterns.ch2;import java.util.Objects;public interface Predicate<T> {    boolean test(T t);    default Predicate<T> and(Predicate<? super T> other) {        Objects.requireNonNull(other);        return (T t) -> this.test(t) && other.test(t);    }    default Predicate<T> negate() {        return (T t) -> !this.test(t);    }}

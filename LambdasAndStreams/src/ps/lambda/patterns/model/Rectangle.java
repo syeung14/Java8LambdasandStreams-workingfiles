@@ -1,9 +1,1 @@
-package ps.lambda.patterns.model;
-
-public class Rectangle extends Shape {
-
-	@Override
-	public String toString() {
-		return "Rectangle []";
-	}
-}
+package ps.lambda.patterns.model;public class Rectangle extends Shape {	@Override	public String toString() {		return "Rectangle []";	}}
